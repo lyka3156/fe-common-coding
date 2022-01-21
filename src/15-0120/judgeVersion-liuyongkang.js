@@ -46,4 +46,31 @@ const shouldUpdate2 = (oldVersion, newVersion) => {
 	return [newVersion, oldVersion].sort()[0] !== newVersion;
 };
 
+// // 方式3
+// const shouldUpdate3 = (oldVersion, newVersion) => {
+// 	// 1. 两个版本相同，返回 false
+// 	if (oldVersion === newVersion) return false;
+
+// 	// 2. 两个版本不相同的情况
+// 	// 将两个版本号转换成数字
+// 	oldVersion = oldVersion.split('.');
+// 	newVersion = newVersion.split('.');
+
+// 	let index = -1,
+// 		len = oldVersion.length,
+// 		flag = false;
+
+// 	while (index++ < len - 1) {
+// 		// 返回两个版本的比较值
+// 		flag = Number(newVersion[index]) > Number(oldVersion[index]);
+// 		if (flag) index = len;
+// 	}
+
+// 	// 返回两个版本的比较值
+// 	return flag;
+// };
+
+// console.log(shouldUpdate3('10.10.10', '10.10.2'));
+// console.log(shouldUpdate3('10.10.10', '10.2.10'));
+
 export { shouldUpdate1, shouldUpdate2 };
