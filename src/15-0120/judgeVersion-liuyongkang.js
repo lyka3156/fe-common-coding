@@ -29,12 +29,6 @@ const shouldUpdate1 = (oldVersion, newVersion) => {
 	// 返回两个版本的比较值
 	return newVersion > oldVersion;
 };
-// 测试案例1
-console.log('方式1', shouldUpdate1('0.1.0', '0.2.0')); // true
-console.log('方式1', shouldUpdate1('1.0.0', '1.0.0')); // false
-console.log('方式1', shouldUpdate1('1.0.1', '1.0.2')); // true
-console.log('方式1', shouldUpdate1('1.1.1', '1.0.2')); // false
-console.log('方式1', shouldUpdate1('1.1.1', '2.0.0')); // true
 
 // 方式2：数组的sort方法
 /**
@@ -52,9 +46,4 @@ const shouldUpdate2 = (oldVersion, newVersion) => {
 	return [newVersion, oldVersion].sort()[0] !== newVersion;
 };
 
-// 测试案例2
-console.log('方式2', shouldUpdate2('0.1.0', '0.2.0')); // true
-console.log('方式2', shouldUpdate2('1.0.0', '1.0.0')); // false
-console.log('方式2', shouldUpdate2('1.0.1', '1.0.2')); // true
-console.log('方式2', shouldUpdate2('1.1.1', '1.0.2')); // false
-console.log('方式2', shouldUpdate2('1.1.1', '2.0.0')); // true
+export { shouldUpdate1, shouldUpdate2 };
